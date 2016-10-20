@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<!-- 防止将数字识别为电话号码 -->
+	<meta name="format-detection" content="telephone=no">
+	<title>webReader</title>
+	<link rel="icon" href="img/title_logo.PNG" type="img/gif" />
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	
+	<div id="root">
+		
+		<!-- 头部按钮 -->
+		<div id="top_nav" class="top_nav">
+			<button type="button" class="nav_title"><a href="http://haiouyun.com/layout/project.html">&lt; 返回HioU</a></button>
+		</div>
+		
+		<!-- 中间交互DIV-->
+		<div id="model_action">
+			<div class="mid_action"></div>
+		</div>
+		<!-- 提示信息 -->
+		<span id="font_info" class="info">infotext</span>
+		<!-- 文本内容 -->
+		<div id="chapter_title"></div>
+		<div id="chapter_content" class="read-content">
+		</div>
+		
+		<!-- 翻页按钮 -->
+		<div class="read_button">
+			<ul class="chapter_btn">
+				<li id="prev_btn">上一章</li>
+				<li id="next_btn">下一章</li>
+			</ul>
+		</div>
+
+		<!-- 底部按钮 -->
+		<div id="bottom_nav" class="bottom_nav">
+			<ul class="bottom_btn">
+				<li>
+					<span class="titleshow btn">目录</span>
+				</li>
+				<li>
+					<span class="fontset btn">字体</span>
+				</li>
+				<li>
+					<span class="readtype btn">夜间</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="font_control">
+			<div class="font_size font_mod">
+				<p>字号
+					<button type="button" id="lg_font" class="lg_font set_btn">大</button>
+					<button type="button" id="sm_font" class="sm_font set_btn">小</button>		
+				</p>
+			</div>
+			<div class="bg_set font_mod">
+				<p>背景
+					<button type="button" class="set_btn bg_type bg_type_1"></button>
+					<button type="button" class="set_btn bg_type bg_type_2"></button>
+					<button type="button" class="set_btn bg_type bg_type_3"></button>
+					<button type="button" class="set_btn bg_type bg_type_4"></button>
+				</p>
+			</div>
+		</div>
+
+		<!-- 章节显示 -->
+		<div id="chapterTitleshow">
+		</div>
+
+	</div>
+
+	<script src="lib/zepto.min.js"></script>
+	<script>
+		window.jQuery = $;
+	</script>
+	<script src="js/jquery.base64.js"></script>
+	<script src="js/jquery.jsonp.js"></script>
+	<script src="js/base.js"></script>
+
+</body>
+</html>
