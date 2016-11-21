@@ -16,11 +16,9 @@
 title: my-jekyll-blog
 email: 1192157164@qq.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  lily的博客,web,HTML5,前端开发,NodeJs开发
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://lily1115.github.com" # the base hostname & protocol for your site
+url: "http://lovermobile.com" # the base hostname & protocol for your site
 twitter_username: 2lily2 # jekyllrb
 github_username:  lily1115 # jekyll
 
@@ -28,4 +26,7 @@ excerpt_separator: ""
 
 # Build settings
 markdown: kramdown
-theme: minima
+permalink: /:year/:month/:day/:title
+port: 5000
+# theme: minima
+
