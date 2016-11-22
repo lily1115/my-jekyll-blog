@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "本站常用模块介绍"
+categories: 博客搭建记录
+---
+
+主要介绍本博客页面中几个常用的组件使用，这里做一个简要记录也是备忘，另外也是方便后面代码阅读，暂且算是一个API介绍吧。
+
+`注意都需要依赖jQuery库实现`
+
+*滚动条动画 scroll_animate()*
+
+该组件主要是实现滚动条动画，主要用在页面导航和返回顶部按钮等这样类似的操作。参数说明：
+
+{% highlight ruby %}
+scroll_animate({
+	target : num //目标值 必须
+	time : ms, //毫米值
+	step : num，//步长
+	type : string 
+	//运动的速度'normal''slow''fast'
+})
+{% endhighlight %}
+
+
+*鼠标移入移出标题动画显示 hover_animate()*
+
+该组件主要是实现鼠标移入和移出时动画显示，主要用在图片列表中的描述显示隐藏。参数说明：
+
+{% highlight ruby %}
+hover_animate({
+	parent : css-selector,
+	//css选择器，包含动画元素的父级元素 必须
+	eventTarget : css-selector,
+	//动画触发元素
+	show ： css-selector,
+	//需要一直显示的元素
+	time : ms,//动画时长
+	type : string //运动方向
+	//'toTop''toBottom''toLeft''toRight'默认是'toTop'
+})
+{% endhighlight %}
+
+该组件用于我的项目展示页面中，当鼠标移入时显示项目具体描述，移出就隐藏描述，其动画底层是由CSS3实现，有助于浏览器的页面渲染。
+
+*底部菜单按钮模块 render_bottom _bar()*
+
+主要用于按实际要求渲染底部按钮，该模块默认会生成一个底部按钮，即不输入任何参数便会生成一个底部按钮。参数说明：
+
+{% highlight ruby %}
+render_bottom _bar({
+	num : num
+	//需要生成菜单的数量
+	class : string or array
+	//菜单添加类名可以是单个也可以是个数组，当class为数组时
+	//如果数组小于菜单数量，那么以最后一个class分配到多于的菜单数量
+	//如果数组大于菜单数量，那么多出来的class无效，不会加入
+	html : string or array
+	//生成菜单中的html内容，与class处理方式一样
+})
+{% endhighlight %}
+
+为了使页面流畅建议该模块一次性注入,代码结构原理生成节点后加入CSS样式最后一次性注入到body中，加速页面的渲染。
+
+*页面导航数据的注入 updata_side _bar()*
+
+主要是根据一个标准布局来实现自动生成侧边栏的导航类容。参数说明：
+
+`这里说的标准布局是指，页面类容是明显的分成A\B\C\D结构，同时拥有相同的类名，即使用了一套CSS样式来布局，其次每个小节中有一个标题标签，本博客中使用的H3标签作为标准，每个小节为一个LI标签，同时li标签都有包含一个相同的class`
+
+{% highlight ruby %}
+updata_side _bar( targetEle , title )
+//targetEle,表示要获取数据的目标，这里是指包含所有小节的父元素
+//title, 侧边栏的标题（xxx页面导航栏、xxx清单）
+{% endhighlight %}
+
+说完啦！
+目前我的博客已经完成基本的开发工作，主要是手机端调试，手机端触摸事件还有些BUG。

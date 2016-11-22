@@ -105,6 +105,10 @@
 			font-size: 14px;
 			outline: none;
 		}
+		.nav_title a
+		{
+			color: #bababa;
+		}
 		.bottom_btn
 		{
 			width: 90%;

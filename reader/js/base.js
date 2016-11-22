@@ -208,7 +208,7 @@
 			});
 		}
 		active( $('.bottom_btn li span'), 'bot_active' );
-		active( $('.top_nav .nav_title'), 'bot_active' );
+		active( $('.nav_title a'), 'bot_active' );
 		active( $('.chapter_btn li'), 'page_active' );
 		active( $('.set_btn'), 'setbutton_active' );
 		active($('#chapterTitleshow li'), 'bot_active' );

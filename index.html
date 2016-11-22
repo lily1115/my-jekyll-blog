@@ -1,10 +1,8 @@
 ---
 layout: default
-title: "test title"
 ---
-
-
-<div id="blog-list">
+<div class="home">
+<div id="post-list">
   {% for post in site.posts %}
   <section class="item-blog">
       <div class="item-body">
@@ -13,7 +11,7 @@ title: "test title"
               <span class="write-time">编写时间：{{ post.date | date: "%b %-d, %Y" }}</span>
           </div>
           <div class="item-description">
-              <p>{{ post.excerpt }}</p>
+              {{ post.excerpt }}
               <a href="{{ post.url | prepend: site.baseurl }}" class="item-button desription-a">阅读全文<span>&raquo;</span></a>
           </div>
       </div>
@@ -21,4 +19,7 @@ title: "test title"
           <div></div>
       </div>
   </section>
-  {% endfor %} 
+  {% endfor %}  
+</div>
+</div>
+
