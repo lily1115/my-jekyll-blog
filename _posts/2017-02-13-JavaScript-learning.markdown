@@ -6,7 +6,7 @@ categories: JavaScript
 ---
 *以下摘自《JavaScript语言精粹》*
 * length属性的值是其数组的最大整数属性名加上1，但它不一定等于数组里的属性的个数
-{% highlight ruby %}
+{% highlight js linenos %}
 var myArray = [];
 myArray.length            // 0
 
@@ -21,7 +21,7 @@ myArray.length  //1000003
 {% endhighlight %}
 
 * 判断对象是否为数组的好方法：
-{% highlight ruby %}
+{% highlight js linenos %}
 var is_array = function (value){
     return Object.prototype.toString.apply(value) === '[object Array]'
 }
@@ -29,13 +29,13 @@ var is_array = function (value){
 
 * Array的sort方法不能对一组数字进行正确排序
 
-{% highlight ruby %}
+{% highlight js linenos %}
 var n = [3, 4, 23, 45, 122, 9, 8];
 n.sort(); // n = [122, 23, 3, 4, 45, 8, 9]
 {% endhighlight %}
 JavaScript的默认比较函数把要被排序的元素都视为字符串，所以得到了一个错的离谱的结果，解决方法如下：
 
-{% highlight ruby %}
+{% highlight JavaScript linenos %}
 n.sort(function(a, b){
     return a-b;
 })
@@ -47,7 +47,7 @@ n.sort(function(a, b){
 `typeof NaN === 'number'   //true`
 所以判断是否为数字的最佳方法是：
 
-{% highlight ruby %}
+{% highlight js linenos %}
 var isNumber = function(value){
     retur typeof value === 'number' && isFinite(value);
 }
